@@ -7,26 +7,18 @@
 }
 
 
-<style type="text/css">
-    .topDiv {
-        width: 50%;
-        margin: 10px auto;
-        background-color: #f2f2f2;
-        text-align: left;
-        padding: 2%;
-    }
-</style>
+
 <div class="topDiv">
-    <fieldset style="margin: 2% auto; width: 90%; background-color: #FFEBCD; text-align: center">
+    <fieldset style="text-align: center">
         <h4>
 
-            @Html.ActionLink("Add New project", "AddEditProject")
+            @Html.ActionLink("Add New project", "AddEditProject", new { id = "test" }, new { @class = "btn btn-primary btn-sm" }) 
 
         </h4>
     </fieldset>
     <fieldset>
-        <table style="margin: 2% auto; padding: 5px; width: 90%">
-            <tr style="background-color: #FFFACD">
+        <table class="table table-bordered table-striped table-round">
+            <tr style="">
                 <th>
 
                     ProjectName
@@ -51,7 +43,7 @@
                 {
 
 
-                    <tr style="background-color: #FFFFF0">
+                    <tr>
                         <td>
 
                             @item.ProjectName
@@ -64,7 +56,7 @@
                         </td>
                         <td>
 
-                            @Html.ActionLink("Edit", "AddEditProject", new { id = @item.Id }) / @Html.ActionLink("Delete", "Delete", new { id = @item.Id })
+                            @Html.ActionLink("Edit", "AddEditProject", new { id = @item.Id }, new { @class = "btn btn-primary btn-sm" })   @Html.ActionLink("Delete", "Delete", new { id = @item.Id }, new { @class = "btn btn-primary btn-sm" })
 
                             @* /@Html.ActionLink("Details", "ProjectDetails", new { basePath = @item.basePath })*@
 
